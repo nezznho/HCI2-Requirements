@@ -10,6 +10,7 @@ namespace AccessibleMealPlanner.BLL
 {
     public class MealManager
     {
+        /*
         private readonly UserDAO _userDao = new UserDAO();
         private readonly MealDAO _mealDao = new MealDAO();
 
@@ -37,5 +38,6 @@ namespace AccessibleMealPlanner.BLL
             // ... Logic to check if any user allergy is present in meal ingredients
             return true; // Placeholder for actual logic
         }
+        */
     }
 }

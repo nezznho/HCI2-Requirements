@@ -16,17 +16,22 @@ namespace HCI2_Requirements
 {
     public partial class Form1 : Form
     {
+        private readonly LoginService _loginService = new LoginService();
+        private readonly SpeechSynthesizer _speaker = new SpeechSynthesizer();
+ 
         public Form1()
         {
             InitializeComponent();
+            _speaker.SpeakAsync("Welcome to Accessible Meal Planner. Please log in.");
         }
 
         private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
         private void ReadMealPlanButton_Click(object sender, EventArgs e)
-        {
+        {/*
             string mealPlanText; // Get the text from the control
             synthesizer.SpeakAsync(mealPlanText); // Speak the text asynchronously
+        */
         }
 
         private SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine();
@@ -52,6 +57,50 @@ namespace HCI2_Requirements
                 // Logic to open the meal creation dialog
                 MessageBox.Show("Voice command recognized: Opening Add Breakfast window.");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RegisterForm reg = new RegisterForm();
+            reg.Show();
+            this.Hide();
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            userr user = new userr(username, password);
+
+            bool isAuthenticated = _loginService.AuthenticateUser(user.Username, user.Password);
+
+            if (isAuthenticated)
+            {
+                _speaker.SpeakAsync("Login successful. Welcome, " + user.Username);
+                MessageBox.Show("Login Successful!", "Access Granted",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DashboardForm dash = new DashboardForm();
+                dash.Show();
+                this.Hide();
+            }
+            else
+            {
+                _speaker.SpeakAsync("Invalid username or password. Please try again.");
+                MessageBox.Show("Invalid Username or Password!",
+                                "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

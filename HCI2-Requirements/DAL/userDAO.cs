@@ -13,6 +13,7 @@ namespace AccessibleMealPlanner.DAL
         private readonly DatabaseHelper _dbHelper = new DatabaseHelper();
 
         // Encapsulated method to get a user
+        /*
         public UserModel GetUserByID(int userId)
         {
             UserModel user = null;
@@ -41,6 +42,7 @@ namespace AccessibleMealPlanner.DAL
             }
             return user;
         }
+        */
 
         // Add Encapsulated methods for InsertUser, UpdateUser, etc.
     }
