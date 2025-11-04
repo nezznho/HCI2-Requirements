@@ -59,18 +59,15 @@ namespace HCI2_Requirements
             }
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            RegisterForm reg = new RegisterForm();
+            reg.Show();
+            this.Hide();
+        }
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUsername.Text) ||
-                string.IsNullOrWhiteSpace(txtPassword.Text))
-            {
-                _speaker.SpeakAsync("Please enter both username and password.");
-                MessageBox.Show("Please enter both Username and Password.",
-                                "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             try
             {
                 string username = txtUsername.Text.Trim();
@@ -87,9 +84,8 @@ namespace HCI2_Requirements
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     DashboardForm dash = new DashboardForm();
-                    // Changed
-                    dash.ShowDialog();
-                    this.Close();
+                    dash.Show();
+                    this.Hide();
                 }
                 else
                 {
