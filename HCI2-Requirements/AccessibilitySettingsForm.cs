@@ -23,6 +23,5 @@ namespace HCI2_Requirements
             dashboardForm.Show();
             this.Hide();
         }
-
     }
 }

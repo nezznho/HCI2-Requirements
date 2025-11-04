@@ -10,7 +10,7 @@
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        // <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -107,7 +107,6 @@
             this.texttospeech.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.texttospeech.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.texttospeech.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.texttospeech.CheckedChanged += new System.EventHandler(this.texttospeech_CheckedChanged);
             // 
             // cmbfont
             // 
@@ -274,7 +273,6 @@
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
