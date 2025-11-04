@@ -84,7 +84,7 @@ namespace HCI2_Requirements
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     DashboardForm dash = new DashboardForm();
-                    dash.Show();
+                    dash.ShowDialog();
                     this.Hide();
                 }
                 else

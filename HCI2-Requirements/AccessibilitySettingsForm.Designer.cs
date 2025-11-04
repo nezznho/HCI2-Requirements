@@ -107,7 +107,7 @@
             this.texttospeech.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.texttospeech.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.texttospeech.UncheckedState.InnerColor = System.Drawing.Color.White;
-            this.texttospeech.CheckedChanged += new System.EventHandler(this.texttospeech_CheckedChanged);
+            ///this.texttospeech.CheckedChanged += new System.EventHandler(this.texttospeech_CheckedChanged);
             // 
             // cmbfont
             // 
