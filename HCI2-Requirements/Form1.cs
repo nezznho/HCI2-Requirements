@@ -68,40 +68,61 @@ namespace HCI2_Requirements
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
-            string password = txtPassword.Text.Trim();
-
-            userr user = new userr(username, password);
-
-            bool isAuthenticated = _loginService.AuthenticateUser(user.Username, user.Password);
-
-            if (isAuthenticated)
+            try
             {
-                _speaker.SpeakAsync("Login successful. Welcome, " + user.Username);
-                MessageBox.Show("Login Successful!", "Access Granted",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string username = txtUsername.Text.Trim();
+                string password = txtPassword.Text.Trim();
 
-                DashboardForm dash = new DashboardForm();
-                dash.Show();
-                this.Hide();
+                userr user = new userr(username, password);
+
+                bool isAuthenticated = _loginService.AuthenticateUser(user.Username, user.Password);
+
+                if (isAuthenticated)
+                {
+                    _speaker.SpeakAsync("Login successful. Welcome, " + user.Username);
+                    MessageBox.Show("Login Successful!", "Access Granted",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    DashboardForm dash = new DashboardForm();
+                    dash.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    _speaker.SpeakAsync("Invalid username or password. Please try again.");
+                    MessageBox.Show("Invalid Username or Password!",
+                                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (MySqlException mySqlEx)
             {
-                _speaker.SpeakAsync("Invalid username or password. Please try again.");
-                MessageBox.Show("Invalid Username or Password!",
-                                "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var errB = MessageBox.Show("A database error occurred: " + mySqlEx.Message,
+                                "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _speaker.SpeakAsync("A database error occurred. Please try again later.");
             }
-        }
-
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-
+            catch (Exception ex)
+            {
+                var errA = MessageBox.Show("An error occurred during login: " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _speaker.SpeakAsync("An error occurred during login. Please try again.");
+            }
         }
 
         private void btnexit_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            _speaker.SpeakAsync("Are you sure you want to exit?, Select Yes or No.");
+            var response = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (response == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                _speaker.SpeakAsync("Exit cancelled. Returning to the application Please Login");
+
+            }
         }
+
     }
 }
 
