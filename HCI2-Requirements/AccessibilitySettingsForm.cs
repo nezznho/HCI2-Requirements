@@ -17,12 +17,14 @@ namespace HCI2_Requirements
             InitializeComponent();
         }
 
-        private void exit_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
-            DashboardForm dashboardForm = new DashboardForm();
-            dashboardForm.Show();
-            this.Hide();
+            this.Close();
         }
 
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+            // Save Button Clicked
+        }
     }
 }

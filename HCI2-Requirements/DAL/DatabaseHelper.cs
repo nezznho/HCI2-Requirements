@@ -10,7 +10,8 @@ namespace AccessibleMealPlanner.DAL
 {
     public class DatabaseHelper
     {
-        private readonly string _connectionString = "Server=localhost;Database=AccessibleMealDB;Uid=root;Pwd=JOHNZENDATABASE;";
+        private readonly string _connectionString = "server=localhost; user id=user; password=123456789; database=basemanage";
+        //DB Connection mo Johnzen > "Server=localhost;Database=AccessibleMealDB;Uid=root;Pwd=JOHNZENDATABASE;";
 
         // This method encapsulates the connection setup
         public MySqlConnection GetConnection()

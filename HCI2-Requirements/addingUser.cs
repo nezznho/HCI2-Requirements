@@ -13,20 +13,11 @@ using MySql.Data.MySqlClient;
 
 namespace HCI2_Requirements
 {
-    public partial class RegisterForm : Form
+    public partial class addingUser : Form
     {
-        public RegisterForm()
+        public addingUser()
         {
             InitializeComponent();
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            Form1 login = new Form1();
-            login.ShowDialog();
-            this.Close();
-
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -54,9 +45,9 @@ namespace HCI2_Requirements
 
         }
 
-        private void RegisterForm_Load(object sender, EventArgs e)
+        private void cancelBtn_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

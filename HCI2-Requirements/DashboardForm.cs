@@ -12,7 +12,7 @@ namespace HCI2_Requirements
         public DashboardForm()
         {
             InitializeComponent();
-            _speaker.SpeakAsync("Welcome to Dashboard, Please Select what action you like.");
+            _speaker.SpeakAsync("Welcome to Dashboard");
         }
 
 
@@ -20,8 +20,18 @@ namespace HCI2_Requirements
         {
             MealForm mealForm = new MealForm();
             mealForm.ShowDialog();
-            this.Hide();
         }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+
+            var message = MessageBox.Show("Are you sure you want to Exit?", "About to Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (message == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+        }
+
 
         private void btnaccessibility_Click(object sender, EventArgs e)
         {
@@ -29,7 +39,6 @@ namespace HCI2_Requirements
 
             AccessibilitySettingsForm form = new AccessibilitySettingsForm();
             form.ShowDialog();
-            this.Hide();
         }
 
         private void btnviewmeal_Click(object sender, EventArgs e)
@@ -40,20 +49,21 @@ namespace HCI2_Requirements
 
         private void btnlogout_Click(object sender, EventArgs e)
         {
-            _speaker.SpeakAsync("You're about to Logout Select Yes or No");
+            _speaker.SpeakAsync("You're about to Logout?");
             var confirm = MessageBox.Show("Are you sure you want to Logout", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
                 Form1 form = new Form1();
-                form.Show();
+                this.Hide();
+                form.ShowDialog();
                 this.Close();
-                return;
             }
             else
             {
                 _speaker.SpeakAsync("Logout Cancelled");
                 return;
             }
+            this.Close();
         }
         // need Lipat sa ibang class
         private void addtoList_Click(object sender, EventArgs e)
@@ -141,6 +151,11 @@ namespace HCI2_Requirements
                 }
             }
         }
-        
+
+        private void addNewBtn_Click(object sender, EventArgs e)
+        {
+            addingUser add = new addingUser();
+            add.ShowDialog();
+        }
     }
 }

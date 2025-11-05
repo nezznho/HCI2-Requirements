@@ -25,8 +25,6 @@ namespace HCI2_Requirements
             _speaker.SpeakAsync("Welcome to Accessible Meal Planner. Please log in.");
         }
 
-        private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
-
         private void ReadMealPlanButton_Click(object sender, EventArgs e)
         {/*
             string mealPlanText; // Get the text from the control
@@ -59,12 +57,7 @@ namespace HCI2_Requirements
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            RegisterForm reg = new RegisterForm();
-            reg.Show();
-            this.Hide();
-        }
+      
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
@@ -79,13 +72,13 @@ namespace HCI2_Requirements
 
                 if (isAuthenticated)
                 {
-                    _speaker.SpeakAsync("Login successful. Welcome, " + user.Username);
+                    _speaker.SpeakAsync("Login successful");
                     MessageBox.Show("Login Successful!", "Access Granted",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     DashboardForm dash = new DashboardForm();
                     dash.ShowDialog();
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
@@ -98,7 +91,7 @@ namespace HCI2_Requirements
             {
                 var errB = MessageBox.Show("A database error occurred: " + mySqlEx.Message,
                                 "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _speaker.SpeakAsync("A database error occurred. Please try again later.");
+                _speaker.SpeakAsync("A connection error occurred. Please try again later.");
             }
             catch (Exception ex)
             {
