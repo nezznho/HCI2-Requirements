@@ -18,7 +18,7 @@ namespace HCI2_Requirements
     {
         private readonly LoginService _loginService = new LoginService();
         private readonly SpeechSynthesizer _speaker = new SpeechSynthesizer();
- 
+
         public Form1()
         {
             InitializeComponent();

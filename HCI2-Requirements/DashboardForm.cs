@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 //Mod
-using MySql.Data.MySqlClient;
 using System.Speech.Synthesis;
+using System.Windows.Forms;
 
 namespace HCI2_Requirements
 {
@@ -33,6 +25,8 @@ namespace HCI2_Requirements
 
         private void btnaccessibility_Click(object sender, EventArgs e)
         {
+            //this.btnaccessibility.Text = "Loading Accessibility Settings";
+
             AccessibilitySettingsForm form = new AccessibilitySettingsForm();
             form.ShowDialog();
             this.Hide();
@@ -48,11 +42,11 @@ namespace HCI2_Requirements
         {
             _speaker.SpeakAsync("You're about to Logout Select Yes or No");
             var confirm = MessageBox.Show("Are you sure you want to Logout", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirm ==  DialogResult.Yes) 
+            if (confirm == DialogResult.Yes)
             {
-                    Form1 form = new Form1();
-                    form.Show();
-                    this.Close();
+                Form1 form = new Form1();
+                form.Show();
+                this.Close();
                 return;
             }
             else
