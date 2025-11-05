@@ -37,7 +37,13 @@ namespace HCI2_Requirements
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gunapanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.addtoList = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gunapanel.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -170,12 +176,61 @@ namespace HCI2_Requirements
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // gunapanel
+            // 
+            this.gunapanel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.gunapanel.Controls.Add(this.addtoList);
+            this.gunapanel.Controls.Add(this.panel3);
+            this.gunapanel.Location = new System.Drawing.Point(794, 128);
+            this.gunapanel.Name = "gunapanel";
+            this.gunapanel.Size = new System.Drawing.Size(337, 322);
+            this.gunapanel.TabIndex = 25;
+            // 
+            // addtoList
+            // 
+            this.addtoList.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.addtoList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addtoList.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.addtoList.FlatAppearance.BorderSize = 0;
+            this.addtoList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addtoList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addtoList.ForeColor = System.Drawing.Color.Black;
+            this.addtoList.Location = new System.Drawing.Point(0, 290);
+            this.addtoList.Name = "addtoList";
+            this.addtoList.Size = new System.Drawing.Size(337, 32);
+            this.addtoList.TabIndex = 25;
+            this.addtoList.Text = "Add to List";
+            this.addtoList.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(115)))), ((int)(((byte)(144)))));
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(337, 82);
+            this.panel3.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(65, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(204, 34);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "GROCERY LIST";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(527, 545);
+            this.ClientSize = new System.Drawing.Size(1207, 545);
+            this.Controls.Add(this.gunapanel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -190,6 +245,9 @@ namespace HCI2_Requirements
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gunapanel.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +262,10 @@ namespace HCI2_Requirements
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private Guna2Panel gunapanel;
+        private System.Windows.Forms.Button addtoList;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
     }
 }
 
