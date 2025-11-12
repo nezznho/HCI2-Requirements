@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.MonthCalendar monthCalendar;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             this.btnlogout = new System.Windows.Forms.Button();
             this.btnaddmeal = new System.Windows.Forms.Button();
-            this.btnviewmeal = new System.Windows.Forms.Button();
+            this.viewmealBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -49,6 +50,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.addNewBtn = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,7 +62,7 @@
             // monthCalendar
             // 
             monthCalendar.Cursor = System.Windows.Forms.Cursors.Default;
-            monthCalendar.Location = new System.Drawing.Point(27, 113);
+            monthCalendar.Location = new System.Drawing.Point(33, 123);
             monthCalendar.Name = "monthCalendar";
             monthCalendar.TabIndex = 0;
             // 
@@ -72,39 +74,45 @@
             this.btnlogout.FlatAppearance.BorderSize = 0;
             this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogout.Location = new System.Drawing.Point(779, 10);
+            this.btnlogout.Location = new System.Drawing.Point(959, 10);
             this.btnlogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(38, 43);
             this.btnlogout.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.btnlogout, "Logout\r\n");
             this.btnlogout.UseVisualStyleBackColor = true;
             this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            this.btnlogout.MouseHover += new System.EventHandler(this.btnlogout_MouseHover);
             // 
             // btnaddmeal
             // 
+            this.btnaddmeal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnaddmeal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnaddmeal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaddmeal.Location = new System.Drawing.Point(12, 484);
+            this.btnaddmeal.Location = new System.Drawing.Point(14, 507);
             this.btnaddmeal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnaddmeal.Name = "btnaddmeal";
             this.btnaddmeal.Size = new System.Drawing.Size(230, 50);
             this.btnaddmeal.TabIndex = 19;
             this.btnaddmeal.Text = "Add Meal";
-            this.btnaddmeal.UseVisualStyleBackColor = true;
+            this.toolTip1.SetToolTip(this.btnaddmeal, "Add New Meal");
+            this.btnaddmeal.UseVisualStyleBackColor = false;
             this.btnaddmeal.Click += new System.EventHandler(this.btnaddmeal_Click);
             // 
-            // btnviewmeal
+            // viewmealBtn
             // 
-            this.btnviewmeal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnviewmeal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnviewmeal.Location = new System.Drawing.Point(12, 538);
-            this.btnviewmeal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnviewmeal.Name = "btnviewmeal";
-            this.btnviewmeal.Size = new System.Drawing.Size(230, 50);
-            this.btnviewmeal.TabIndex = 19;
-            this.btnviewmeal.Text = "View Meal";
-            this.btnviewmeal.UseVisualStyleBackColor = true;
-            this.btnviewmeal.Click += new System.EventHandler(this.btnviewmeal_Click);
+            this.viewmealBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.viewmealBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewmealBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewmealBtn.Location = new System.Drawing.Point(14, 561);
+            this.viewmealBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.viewmealBtn.Name = "viewmealBtn";
+            this.viewmealBtn.Size = new System.Drawing.Size(230, 50);
+            this.viewmealBtn.TabIndex = 19;
+            this.viewmealBtn.Text = "View Meal";
+            this.toolTip1.SetToolTip(this.viewmealBtn, "View All Meal");
+            this.viewmealBtn.UseVisualStyleBackColor = false;
+            this.viewmealBtn.Click += new System.EventHandler(this.viewmealBtn_Click_1);
             // 
             // label4
             // 
@@ -133,7 +141,6 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(117)))), ((int)(((byte)(126)))));
             this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Panel1.Controls.Add(this.btnexit);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.pictureBox1);
             this.guna2Panel1.Controls.Add(this.btnaccessibility);
@@ -141,7 +148,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(947, 65);
+            this.guna2Panel1.Size = new System.Drawing.Size(1008, 65);
             this.guna2Panel1.TabIndex = 23;
             // 
             // btnexit
@@ -154,12 +161,13 @@
             this.btnexit.FillColor = System.Drawing.Color.Red;
             this.btnexit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexit.ForeColor = System.Drawing.Color.Black;
-            this.btnexit.Location = new System.Drawing.Point(846, 8);
+            this.btnexit.Location = new System.Drawing.Point(19, 618);
             this.btnexit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(95, 43);
+            this.btnexit.Size = new System.Drawing.Size(223, 43);
             this.btnexit.TabIndex = 23;
-            this.btnexit.Text = "Close";
+            this.btnexit.Text = "Exit";
+            this.toolTip1.SetToolTip(this.btnexit, "Exit");
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // pictureBox1
@@ -182,12 +190,13 @@
             this.btnaccessibility.FlatAppearance.BorderSize = 0;
             this.btnaccessibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnaccessibility.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaccessibility.Location = new System.Drawing.Point(730, 11);
+            this.btnaccessibility.Location = new System.Drawing.Point(910, 11);
             this.btnaccessibility.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnaccessibility.Name = "btnaccessibility";
             this.btnaccessibility.Size = new System.Drawing.Size(38, 43);
             this.btnaccessibility.TabIndex = 19;
             this.btnaccessibility.Text = " ";
+            this.toolTip1.SetToolTip(this.btnaccessibility, "Accessibility");
             this.btnaccessibility.UseVisualStyleBackColor = false;
             this.btnaccessibility.Click += new System.EventHandler(this.btnaccessibility_Click);
             // 
@@ -197,9 +206,9 @@
             this.guna2Panel3.Controls.Add(monthCalendar);
             this.guna2Panel3.Controls.Add(this.monthCalendar1);
             this.guna2Panel3.Controls.Add(this.panel2);
-            this.guna2Panel3.Location = new System.Drawing.Point(255, 98);
+            this.guna2Panel3.Location = new System.Drawing.Point(271, 98);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(337, 490);
+            this.guna2Panel3.Size = new System.Drawing.Size(350, 562);
             this.guna2Panel3.TabIndex = 24;
             // 
             // monthCalendar1
@@ -220,7 +229,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(337, 82);
+            this.panel2.Size = new System.Drawing.Size(350, 82);
             this.panel2.TabIndex = 1;
             // 
             // label3
@@ -238,9 +247,9 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.guna2Panel4.Location = new System.Drawing.Point(598, 184);
+            this.guna2Panel4.Location = new System.Drawing.Point(641, 184);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(337, 404);
+            this.guna2Panel4.Size = new System.Drawing.Size(337, 423);
             this.guna2Panel4.TabIndex = 24;
             // 
             // removeBtn
@@ -251,11 +260,12 @@
             this.removeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeBtn.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeBtn.ForeColor = System.Drawing.Color.Black;
-            this.removeBtn.Location = new System.Drawing.Point(766, 594);
+            this.removeBtn.Location = new System.Drawing.Point(809, 613);
             this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(169, 32);
+            this.removeBtn.Size = new System.Drawing.Size(169, 44);
             this.removeBtn.TabIndex = 26;
             this.removeBtn.Text = "Remove";
+            this.toolTip1.SetToolTip(this.removeBtn, "Remove Grocery List");
             this.removeBtn.UseVisualStyleBackColor = false;
             this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
@@ -267,11 +277,12 @@
             this.addtoList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addtoList.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addtoList.ForeColor = System.Drawing.Color.Black;
-            this.addtoList.Location = new System.Drawing.Point(602, 594);
+            this.addtoList.Location = new System.Drawing.Point(643, 613);
             this.addtoList.Name = "addtoList";
-            this.addtoList.Size = new System.Drawing.Size(163, 32);
+            this.addtoList.Size = new System.Drawing.Size(163, 44);
             this.addtoList.TabIndex = 25;
             this.addtoList.Text = "Add";
+            this.toolTip1.SetToolTip(this.addtoList, "Add Grocery List");
             this.addtoList.UseVisualStyleBackColor = false;
             this.addtoList.Click += new System.EventHandler(this.addtoList_Click);
             // 
@@ -279,9 +290,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(115)))), ((int)(((byte)(144)))));
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(598, 96);
+            this.panel3.Location = new System.Drawing.Point(641, 98);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(337, 82);
+            this.panel3.Size = new System.Drawing.Size(337, 80);
             this.panel3.TabIndex = 1;
             // 
             // label5
@@ -290,7 +301,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(65, 24);
+            this.label5.Location = new System.Drawing.Point(72, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(204, 34);
             this.label5.TabIndex = 24;
@@ -298,22 +309,29 @@
             // 
             // addNewBtn
             // 
+            this.addNewBtn.BackColor = System.Drawing.Color.Lime;
             this.addNewBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addNewBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.addNewBtn.Location = new System.Drawing.Point(12, 431);
+            this.addNewBtn.Location = new System.Drawing.Point(14, 454);
             this.addNewBtn.Name = "addNewBtn";
             this.addNewBtn.Size = new System.Drawing.Size(229, 48);
             this.addNewBtn.TabIndex = 27;
             this.addNewBtn.Text = "Add User";
-            this.addNewBtn.UseVisualStyleBackColor = true;
+            this.toolTip1.SetToolTip(this.addNewBtn, "Add New User");
+            this.addNewBtn.UseVisualStyleBackColor = false;
             this.addNewBtn.Click += new System.EventHandler(this.addNewBtn_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 638);
+            this.ClientSize = new System.Drawing.Size(1008, 672);
             this.ControlBox = false;
+            this.Controls.Add(this.btnexit);
             this.Controls.Add(this.addNewBtn);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.addtoList);
@@ -322,7 +340,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.btnviewmeal);
+            this.Controls.Add(this.viewmealBtn);
             this.Controls.Add(this.btnaddmeal);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DashboardForm";
@@ -344,7 +362,7 @@
         private System.Windows.Forms.Button btnlogout;
         private System.Windows.Forms.Button btnaddmeal;
         private System.Windows.Forms.Button btnaccessibility;
-        private System.Windows.Forms.Button btnviewmeal;
+        private System.Windows.Forms.Button viewmealBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
@@ -360,5 +378,6 @@
         private System.Windows.Forms.Button removeBtn;
         private Guna.UI2.WinForms.Guna2Button btnexit;
         private System.Windows.Forms.Button addNewBtn;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

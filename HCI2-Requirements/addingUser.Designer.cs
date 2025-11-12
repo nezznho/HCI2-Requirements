@@ -42,6 +42,8 @@
             this.txtfullname = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.guna2CustomCheckBox1 = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -189,12 +191,41 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(272, 267);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(227, 19);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "** ADD VIEW PASSWORD **";
+            // 
+            // guna2CustomCheckBox1
+            // 
+            this.guna2CustomCheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomCheckBox1.CheckedState.BorderRadius = 2;
+            this.guna2CustomCheckBox1.CheckedState.BorderThickness = 0;
+            this.guna2CustomCheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CustomCheckBox1.Location = new System.Drawing.Point(246, 267);
+            this.guna2CustomCheckBox1.Name = "guna2CustomCheckBox1";
+            this.guna2CustomCheckBox1.Size = new System.Drawing.Size(20, 20);
+            this.guna2CustomCheckBox1.TabIndex = 32;
+            this.guna2CustomCheckBox1.Text = "guna2CustomCheckBox1";
+            this.guna2CustomCheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CustomCheckBox1.UncheckedState.BorderRadius = 2;
+            this.guna2CustomCheckBox1.UncheckedState.BorderThickness = 0;
+            this.guna2CustomCheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
             // addingUser
             // 
             this.AcceptButton = this.btnRegister;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 280);
+            this.ClientSize = new System.Drawing.Size(905, 317);
+            this.Controls.Add(this.guna2CustomCheckBox1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtfullname);
@@ -237,5 +268,7 @@
         private System.Windows.Forms.TextBox txtfullname;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox guna2CustomCheckBox1;
     }
 }

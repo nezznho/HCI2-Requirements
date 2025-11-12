@@ -107,6 +107,7 @@
     <Compile Include="AccessibilitySettingsForm.Designer.cs">
       <DependentUpon>AccessibilitySettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BLL\accessibilityController.cs" />
     <Compile Include="BLL\MealManager.cs" />
     <Compile Include="DAL\DatabaseHelper.cs" />
     <Compile Include="DAL\userDAO.cs" />
@@ -137,14 +138,14 @@
     <Compile Include="addingUser.Designer.cs">
       <DependentUpon>addingUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="showmeal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="showmeal.Designer.cs">
-      <DependentUpon>showmeal.cs</DependentUpon>
-    </Compile>
     <Compile Include="userModel.cs" />
     <Compile Include="userr.cs" />
+    <Compile Include="viewMeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewMeal.Designer.cs">
+      <DependentUpon>viewMeal.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AccessibilitySettingsForm.resx">
       <DependentUpon>AccessibilitySettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,8 +171,8 @@
     <EmbeddedResource Include="addingUser.resx">
       <DependentUpon>addingUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="showmeal.resx">
-      <DependentUpon>showmeal.cs</DependentUpon>
+    <EmbeddedResource Include="viewMeal.resx">
+      <DependentUpon>viewMeal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

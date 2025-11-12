@@ -11,18 +11,29 @@ using System.Speech.Synthesis;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static HCI2_Requirements.AccessibilitySettingsForm;
 
 namespace HCI2_Requirements
 {
     public partial class Form1 : Form
     {
         private readonly LoginService _loginService = new LoginService();
-        private readonly SpeechSynthesizer _speaker = new SpeechSynthesizer();
+        private SpeechSynthesizer _speaker = new SpeechSynthesizer();
+
+        private void SpeakIfOn(string message)
+        {
+            // Check the global setting before speaking
+            if (GlobalSettings.TextToSpeechChecker)
+            {
+                // Use SpeakAsync to ensure the application doesn't freeze
+                _speaker.SpeakAsync(message);
+            }
+        }
 
         public Form1()
         {
             InitializeComponent();
-            _speaker.SpeakAsync("Welcome to Accessible Meal Planner. Please log in.");
+            SpeakIfOn("Welcome to Accessible Meal Planner. Please log in.");
         }
 
         private void ReadMealPlanButton_Click(object sender, EventArgs e)
@@ -72,7 +83,7 @@ namespace HCI2_Requirements
 
                 if (isAuthenticated)
                 {
-                    _speaker.SpeakAsync("Login successful");
+                    SpeakIfOn("Login successful");
                     MessageBox.Show("Login Successful!", "Access Granted",
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -82,7 +93,7 @@ namespace HCI2_Requirements
                 }
                 else
                 {
-                    _speaker.SpeakAsync("Invalid username or password. Please try again.");
+                    SpeakIfOn("Invalid username or password. Please try again.");
                     MessageBox.Show("Invalid Username or Password!",
                                     "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -91,19 +102,19 @@ namespace HCI2_Requirements
             {
                 var errB = MessageBox.Show("A database error occurred: " + mySqlEx.Message,
                                 "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _speaker.SpeakAsync("A connection error occurred. Please try again later.");
+                SpeakIfOn("A connection error occurred. Please try again later.");
             }
             catch (Exception ex)
             {
                 var errA = MessageBox.Show("An error occurred during login: " + ex.Message,
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _speaker.SpeakAsync("An error occurred during login. Please try again.");
+                SpeakIfOn("An error occurred during login. Please try again.");
             }
         }
 
         private void btnexit_Click(object sender, EventArgs e)
         {
-            _speaker.SpeakAsync("Are you sure you want to exit?, Select Yes or No.");
+            SpeakIfOn("Are you sure you want to exit?, Select Yes or No.");
             var response = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (response == DialogResult.Yes)
             {
@@ -111,11 +122,23 @@ namespace HCI2_Requirements
             }
             else
             {
-                _speaker.SpeakAsync("Exit cancelled. Returning to the application Please Login");
+                SpeakIfOn("Exit cancelled. Returning to the application Please Login");
 
             }
         }
 
+
+        private void Form1_FormClosing(object sender, EventArgs e)
+        {
+            _speaker.Dispose();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }
 

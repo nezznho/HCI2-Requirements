@@ -67,7 +67,7 @@
             this.texttospeech.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.texttospeech.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.texttospeech.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.texttospeech.Location = new System.Drawing.Point(243, 124);
+            this.texttospeech.Location = new System.Drawing.Point(296, 122);
             this.texttospeech.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.texttospeech.Name = "texttospeech";
             this.texttospeech.Size = new System.Drawing.Size(55, 30);
@@ -126,14 +126,14 @@
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.Location = new System.Drawing.Point(242, 456);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(187, 44);
             this.guna2Button1.TabIndex = 13;
-            this.guna2Button1.Text = "Cancel";
+            this.guna2Button1.Text = "Close";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label5
@@ -155,7 +155,7 @@
             this.btnsave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnsave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnsave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnsave.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnsave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.ForeColor = System.Drawing.Color.Black;
             this.btnsave.Location = new System.Drawing.Point(42, 456);
             this.btnsave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -227,7 +227,7 @@
             this.darkMode.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.darkMode.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.darkMode.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.darkMode.Location = new System.Drawing.Point(243, 287);
+            this.darkMode.Location = new System.Drawing.Point(296, 287);
             this.darkMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.darkMode.Name = "darkMode";
             this.darkMode.Size = new System.Drawing.Size(55, 30);
@@ -243,7 +243,7 @@
             this.voiceSwt.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.voiceSwt.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.voiceSwt.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.voiceSwt.Location = new System.Drawing.Point(243, 334);
+            this.voiceSwt.Location = new System.Drawing.Point(296, 334);
             this.voiceSwt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.voiceSwt.Name = "voiceSwt";
             this.voiceSwt.Size = new System.Drawing.Size(55, 30);
@@ -259,7 +259,7 @@
             this.readerSwt.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.readerSwt.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.readerSwt.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.readerSwt.Location = new System.Drawing.Point(243, 384);
+            this.readerSwt.Location = new System.Drawing.Point(296, 384);
             this.readerSwt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.readerSwt.Name = "readerSwt";
             this.readerSwt.Size = new System.Drawing.Size(55, 30);
@@ -298,7 +298,8 @@
             this.MinimizeBox = false;
             this.Name = "AccessibilitySettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = "8777777777777777777777777777777777777777777777777777777777777777777777777777\\\\\\\\\\" +
+    "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\77777";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

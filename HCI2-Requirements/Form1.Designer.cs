@@ -29,6 +29,7 @@ namespace HCI2_Requirements
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
@@ -37,6 +38,8 @@ namespace HCI2_Requirements
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +64,8 @@ namespace HCI2_Requirements
             this.txtUsername.PlaceholderText = "Username";
             this.txtUsername.SelectedText = "";
             this.txtUsername.Size = new System.Drawing.Size(345, 59);
-            this.txtUsername.TabIndex = 1;
+            this.txtUsername.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtUsername, "Username");
             // 
             // txtPassword
             // 
@@ -85,7 +89,8 @@ namespace HCI2_Requirements
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(345, 59);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtPassword, "Password");
             // 
             // btnLogin
             // 
@@ -104,6 +109,7 @@ namespace HCI2_Requirements
             this.btnLogin.Size = new System.Drawing.Size(259, 57);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "LOGIN";
+            this.toolTip1.SetToolTip(this.btnLogin, "Login");
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // btnexit
@@ -120,7 +126,7 @@ namespace HCI2_Requirements
             this.btnexit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnexit.Name = "btnexit";
             this.btnexit.Size = new System.Drawing.Size(50, 43);
-            this.btnexit.TabIndex = 8;
+            this.btnexit.TabIndex = 5;
             this.btnexit.Text = "X";
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
@@ -136,6 +142,7 @@ namespace HCI2_Requirements
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot Password?";
+            this.toolTip1.SetToolTip(this.linkLabel1, "Forgot Password");
             // 
             // label1
             // 
@@ -171,6 +178,17 @@ namespace HCI2_Requirements
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(171, 484);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(175, 19);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "** NEW FORM POP **";
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnLogin;
@@ -178,6 +196,7 @@ namespace HCI2_Requirements
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(528, 545);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -191,6 +210,7 @@ namespace HCI2_Requirements
             this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,6 +226,8 @@ namespace HCI2_Requirements
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label9;
     }
 }
 

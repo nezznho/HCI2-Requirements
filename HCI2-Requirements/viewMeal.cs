@@ -10,23 +10,31 @@ using System.Windows.Forms;
 
 namespace HCI2_Requirements
 {
-    public partial class MealForm : Form
+    public partial class viewMeal : Form
     {
-        public MealForm()
+        public viewMeal()
         {
             InitializeComponent();
         }
 
-        private void btnback_Click(object sender, EventArgs e)
+        private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void accessBtn_Click(object sender, EventArgs e)
+        private void viewMeal_Load(object sender, EventArgs e)
         {
 
-            AccessibilitySettingsForm Arr = new AccessibilitySettingsForm();
-            Arr.ShowDialog();
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

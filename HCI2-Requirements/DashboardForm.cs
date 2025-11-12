@@ -1,18 +1,102 @@
 ﻿using System;
+using System.Drawing;
+
 //Mod
 using System.Speech.Synthesis;
 using System.Windows.Forms;
+using static HCI2_Requirements.AccessibilitySettingsForm;
 
 namespace HCI2_Requirements
 {
     public partial class DashboardForm : Form
     {
-        private readonly SpeechSynthesizer _speaker = new SpeechSynthesizer();
+        private SpeechSynthesizer _speaker = new SpeechSynthesizer();
 
+        // Accessibility 
+        private void SpeakIfOn(string message)
+        {
+            // Check the global setting before speaking
+            if (GlobalSettings.TextToSpeechChecker)
+            {
+                // Use SpeakAsync to ensure the application doesn't freeze
+                _speaker.SpeakAsync(message);
+            }
+        }
+
+        private void ApplyTheme()
+        {
+            if (GlobalSettings.IsDarkModeOn)
+            {
+                Color back = Color.FromArgb(34, 34, 34); // dark background
+                Color fore = Color.White;                // light text
+
+                // Form colors
+                this.BackColor = back;
+                this.ForeColor = fore;
+
+                // Apply recursively to all child controls
+                ApplyThemeToControl(this, back, fore);
+            }
+            else
+            {
+                Color back = SystemColors.Control;
+                Color fore = SystemColors.ControlText;
+
+                this.BackColor = back;
+                this.ForeColor = fore;
+
+                ApplyThemeToControl(this, back, fore);
+            }
+        }
+
+        private void ApplyThemeToControl(Control parent, Color back, Color fore)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                try
+                {
+                    control.BackColor = back;
+                    control.ForeColor = fore;
+
+                    if (control is TextBox || control is RichTextBox)
+                    {
+                        control.BackColor = GlobalSettings.IsDarkModeOn ? Color.FromArgb(30, 30, 30) : SystemColors.Window;
+                        control.ForeColor = fore;
+                    }
+                    else if (control is DataGridView dgv)
+                    {
+                        dgv.BackgroundColor = back;
+                        dgv.DefaultCellStyle.BackColor = back;
+                        dgv.DefaultCellStyle.ForeColor = fore;
+                        dgv.ColumnHeadersDefaultCellStyle.BackColor = back;
+                        dgv.ColumnHeadersDefaultCellStyle.ForeColor = fore;
+                        dgv.RowHeadersDefaultCellStyle.BackColor = back;
+                        dgv.RowHeadersDefaultCellStyle.ForeColor = fore;
+                    }
+                }
+                catch
+                {
+                    // Ignore controls that can't accept these color changes
+                }
+
+                // Recurse into children
+                if (control.HasChildren)
+                {
+                    ApplyThemeToControl(control, back, fore);
+                }
+            }
+        }
+
+        // End Accessibility
         public DashboardForm()
         {
             InitializeComponent();
-            _speaker.SpeakAsync("Welcome to Dashboard");
+            if (GlobalSettings.IsDarkModeOn)
+            {
+                ApplyTheme();
+            }
+
+            SpeakIfOn("Welcome to Dashboard");
         }
 
 
@@ -24,7 +108,7 @@ namespace HCI2_Requirements
 
         private void btnexit_Click(object sender, EventArgs e)
         {
-
+            SpeakIfOn("You're about to Exit");
             var message = MessageBox.Show("Are you sure you want to Exit?", "About to Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (message == DialogResult.Yes)
             {
@@ -41,15 +125,10 @@ namespace HCI2_Requirements
             form.ShowDialog();
         }
 
-        private void btnviewmeal_Click(object sender, EventArgs e)
-        {
-            // Action
-
-        }
 
         private void btnlogout_Click(object sender, EventArgs e)
         {
-            _speaker.SpeakAsync("You're about to Logout?");
+            SpeakIfOn("You're about to Logout?");
             var confirm = MessageBox.Show("Are you sure you want to Logout", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
@@ -60,9 +139,11 @@ namespace HCI2_Requirements
             }
             else
             {
-                _speaker.SpeakAsync("Logout Cancelled");
+                SpeakIfOn("Logout Cancelled");
                 return;
             }
+            Form1 login = new Form1();
+            login.Show();
             this.Close();
         }
         // need Lipat sa ibang class
@@ -133,8 +214,8 @@ namespace HCI2_Requirements
         // need Lipat sa ibang class
         private void RepositionControls()
         {
-            int verticalOffset = 5;
-            int currentYPosition = 0;
+            int verticalOffset = 7;
+            int currentYPosition = 10;
 
             for (int i = 0; i < guna2Panel4.Controls.Count; i++)
             {
@@ -145,7 +226,7 @@ namespace HCI2_Requirements
 
                     if (i + 1 < guna2Panel4.Controls.Count && guna2Panel4.Controls[i + 1] is TextBox textBox)
                     {
-                        textBox.Location = new System.Drawing.Point(30, currentYPosition);
+                        textBox.Location = new System.Drawing.Point(0, currentYPosition);
                         currentYPosition = checkBox.Bottom + verticalOffset;
                     }
                 }
@@ -156,6 +237,22 @@ namespace HCI2_Requirements
         {
             addingUser add = new addingUser();
             add.ShowDialog();
+        }
+
+        private void viewmealBtn_Click_1(object sender, EventArgs e)
+        {
+            // Action
+            viewMeal view = new viewMeal();
+            view.ShowDialog();
+        }
+
+        private void btnlogout_MouseHover(object sender, EventArgs e)
+        {
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

@@ -117,4 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label10.Text" xml:space="preserve">
+    <value>** VIEW DATABASE "NEED TO ADD - FUNCTION"
+&gt; VIEW MEAL auto
+&gt; VIEW USER b.
+&gt; VIEW HISTORY b
+&gt; VIEW ADD DATE filter
+&gt; VIEW REMOVE DATE filter
+&gt; SEARCH MEAL b.form
+&gt; SEARCH HISTORY filter
+
+***
+
+</value>
+  </data>
 </root>
